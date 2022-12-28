@@ -25,3 +25,10 @@ Apache Flink 文档学习笔记 https://nightlies.apache.org/flink/flink-docs-re
 1)入门（source表、连续查询、sink表），
 
 2）join方式（普通join，间隔器连接，时间连接）
+
+## [5_自定义函数](https://github.com/LittleWhale0531/flink_learning/blob/main/5_%E8%87%AA%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0.md)
+主要看 标量函数 与 表值函数 的开发方法；注意自动类型推导@DataTypeHint 和 @FunctionHint；
+
+1）标量函数需要扩展 org.apache.flink.table.functions 里面的 ScalarFunction，参数和返回值类型可以是数据类型里列出的任何数据类型
+
+2）表值函数需要扩展 org.apache.flink.table.functions 里面的 TableFunction，表值函数的求值方法本身不包含返回类型，而是通过 collect(T) 方法来发送要输出的行
